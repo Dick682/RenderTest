@@ -9,13 +9,13 @@ from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, parse_qs
 
 # ==================== CONFIG ====================
-BOT_TOKEN = 'YOUR_BOT_TOKEN'
-GITHUB_TOKEN = 'YOUR_GITHUB_TOKEN'
-REPO_OWNER = "YourGithubUsername"
-REPO_NAME = "YourRepoName"
-ADMIN_ID = "5376101564"
-CONCURRENCY = 750
-WEB_PORT = 10000
+BOT_TOKEN = os.environ.get('BOT_TOKEN', '')
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
+REPO_OWNER = os.environ.get('REPO_OWNER', '')
+REPO_NAME = os.environ.get('REPO_NAME', '')
+ADMIN_ID = os.environ.get('ADMIN_ID', '5376101564')
+CONCURRENCY = int(os.environ.get('CONCURRENCY', '750'))
+WEB_PORT = int(os.environ.get('PORT', '10000'))
 
 # ==================== HEADER POOLS ====================
 USER_AGENTS = [
